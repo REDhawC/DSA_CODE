@@ -65,3 +65,13 @@ class BinaryTree:
         if self.rightChild:
             self.rightChild.inOrder()
         print(self.root)
+
+    def __str__(self):
+        if self.leftChild and self.rightChild:
+            return f"[{self.root}, {self.leftChild.__str__()}, {self.rightChild.__str__()}]"
+        elif self.leftChild:
+            return f"[{self.root}, {self.leftChild.__str__()}, None]"
+        elif self.rightChild:
+            return f"[{self.root}, None, {self.rightChild.__str__()}]"
+        else:
+            return f"[{self.root}, None, None]"
